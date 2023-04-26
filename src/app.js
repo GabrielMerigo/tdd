@@ -1,9 +1,12 @@
-function sum(num1, num2) {
-  return num1 + num2;
-}
+const express = require("express");
+const app = express();
 
-function multiply(num1, num2) {
-  return num1 * num2;
-}
+app.get("/", (req, res) => {
+  res.json({ success: true });
+});
 
-module.exports = { sum, multiply };
+app.get("/color", (req, res) => {
+  res.json({ color: "blue" });
+});
+
+module.exports = app;
